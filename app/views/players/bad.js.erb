@@ -1,0 +1,8 @@
+<% unless is_numeric? params[:id] %>
+	var player = $(".new_player");
+<% else %>
+	var player = $("#item-<%= @player.id %>");
+<% end %>
+
+player.find(".rating .btn").removeClass('active');
+player.find(".rating .btn.<%= @player.rating %>").addClass('active');
