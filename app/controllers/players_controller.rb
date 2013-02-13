@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
 	# GET /players/search/:gamertag
 	def search
 		# @players = Player.where("gamertag LIKE ?", "#{params[:gamertag]}%") if params[:gamertag].present?
-		@players = Player.where("gamertag LIKE ?", "%#{params[:gamertag]}%") if params[:gamertag].present?
+		@players = Player.where("gamertag LIKE ?", "%#{params[:gamertag]}%").order("gamertag DESC") if params[:gamertag].present?
 
 		respond_to do |format|
 			format.html # search.html.erb
@@ -13,7 +13,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @players = Player.order("gamertag DESC").all
 
     respond_to do |format|
       format.html # index.html.erb
