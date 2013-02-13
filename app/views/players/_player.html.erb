@@ -1,0 +1,17 @@
+<%
+bad_class_name = ''
+good_class_name = ''
+
+good_class_name = 'active' if player.rating == "good"
+bad_class_name = 'active' if player.rating == "bad"
+%>
+<li id="item-<%= player.id %>">
+	<%= player.gamertag %>
+	<div class="right btn-group" style="margin-left: 10px;">
+		<%= link_to "edit", edit_player_url(player), class: "btn edit" %>
+	</div>
+	<div class="right rating btn-group">
+		<%= link_to "bad", bad_player_url(player), method: :put, remote: true, class: "btn bad #{bad_class_name}" %>
+		<%= link_to "good", good_player_url(player), method: :put, remote: true, class: "btn good #{good_class_name}" %>
+	</div>
+</li>
