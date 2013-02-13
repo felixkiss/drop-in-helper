@@ -5,8 +5,9 @@ html, body {
 }
 
 div#container {
-	width: 800px;
-	margin: 15px auto;
+	width: 800px - 30px*2;
+	margin: 30px auto;
+	padding: 15px 30px;
 	border: 1px solid black;
-	height: 90%;
+	// min-height: 90%;
 }

@@ -1,9 +1,9 @@
 <h1>Listing players</h1>
 
+<div id="new_player">
+	<%= link_to 'New Player', new_player_path, class: "btn btn-primary" %>
+</div>
+
 <ul id="results">
 	<%= render @players %>
 </ul>
-
-<br />
-
-<%= link_to 'New Player', new_player_path %>
