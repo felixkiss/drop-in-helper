@@ -126,6 +126,15 @@ class PlayersController < ApplicationController
   	end
   end
 
+  def stats
+  	@bad_players = Player.where(rating: "bad")
+  	@good_players = Player.where(rating: "good")
+
+  	respond_to do |format|
+  		format.html
+  	end
+  end
+
 private
 
   def is_numeric?(obj) 

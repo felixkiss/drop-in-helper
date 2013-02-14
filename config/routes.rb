@@ -1,5 +1,6 @@
 DropInRails::Application.routes.draw do
 	match 'players/search(/:gamertag)' => 'players#search'
+	match 'players/stats' => 'players#stats'
 
   resources :players do
   	member do
