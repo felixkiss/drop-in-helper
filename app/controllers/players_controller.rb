@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
 	# GET /players/search/:gamertag
 	def search
 		# @players = Player.where("gamertag LIKE ?", "#{params[:gamertag]}%") if params[:gamertag].present?
-		@players = Player.where("gamertag_lower LIKE ?", "%#{params[:gamertag]}%").order(:gamertag_lower) if params[:gamertag].present?
+		@players = Player.where("gamertag_lower LIKE ?", "%#{params[:gamertag].downcase}%").order(:gamertag_lower) if params[:gamertag].present?
 
 		respond_to do |format|
 			format.html # search.html.erb
