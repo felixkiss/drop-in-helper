@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@bitbucket.org:fkiss/#{application}.git"
+set :repository, "git@github.com:felixkiss/#{application}.git"
 set :branch, "master"
 
 # set :ssl_certificate, "recipes/certs/#{application}.crt"
